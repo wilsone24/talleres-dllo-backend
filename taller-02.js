@@ -63,6 +63,8 @@ const findMin = function (numeros) {
   return min;
 };
 
+// Use findMin,findMax y includes que son funciones que ya yo habia hecho anteriormente
+
 const missingNumbers = function (numeros) {
   if (numeros.length === 0) {
     return [];
