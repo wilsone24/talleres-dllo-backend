@@ -49,6 +49,20 @@ Desarrolle una funcion llamada missingNumbers que reciba una lista de númerosy 
 
 */
 
+//Funcion Auxiliar
+const findMin = function (numeros) {
+  if (numeros.length === 0) {
+    return null;
+  }
+  let min = numeros[0];
+  for (let i = 1; i < numeros.length; i++) {
+    if (numeros[i] < min) {
+      min = numeros[i];
+    }
+  }
+  return min;
+};
+
 const missingNumbers = function (numeros) {
   if (numeros.length === 0) {
     return [];
