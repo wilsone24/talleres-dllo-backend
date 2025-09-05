@@ -91,7 +91,7 @@ console.log(conversionRomana("MMXXIV")); // 2024
 console.log(conversionRomana("MCMXCVII")); // 1997
 
 /* 
-Punto #3. descomposicion
+Punto #4. descomposicion
 
 Desarrolle una funcion llamada descomposicion que reciba una string de palabras separada por comas, donde la primera palabra es la palabra a descomponer y el resto son el diccionario a utilizar. La función debe retornar las dos palabras del diccionario que compongan la palabra a descomponer.
 
