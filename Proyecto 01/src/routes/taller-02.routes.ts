@@ -9,10 +9,10 @@ import {
 
 const taller02Routes = Router();
 
-const postFindMax = (request: Request, response: Response) => {};
-const postIncludes = (request: Request, response: Response) => {};
-const postSum = (request: Request, response: Response) => {};
-const postMissingNumbers = (request: Request, response: Response) => {};
+const postFindMax = (request: Request, response: Response): void => {};
+const postIncludes = (request: Request, response: Response): void => {};
+const postSum = (request: Request, response: Response): void => {};
+const postMissingNumbers = (request: Request, response: Response): void => {};
 
 taller02Routes.post("/findMax", postFindMax);
 taller02Routes.post("/includes", postIncludes);
