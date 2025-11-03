@@ -1,41 +1,23 @@
-/* 
-Punto #1. desglosarString
-
-Desarrolle una funcion llamada desglosarString que reciba una string, y la string "vocales" o "consonantes", y retorne la cantidad de vocales o consonantes de la string recibida.
-
-*/
-let desglosarString = function (string, string2) {
-  if (string2 !== "vocales" && string2 !== "consonantes") {
-    return null;
-  }
-  let vocales = "aeiou";
-  let consonantes = "bcdfghjklmnñpqrstvwxyz";
-
+export const desglosarString = (
+  string: string,
+  string2: "vocales" | "consonantes"
+): number => {
+  const conjunto = string2 === "vocales" ? "aeiou" : "bcdfghjklmnñpqrstvwxyz";
   let contador = 0;
-  for (let i = 0; i < string.length; i++) {
-    let char = string[i].toLowerCase();
-    if (string2 === "vocales" && vocales.includes(char)) {
-      contador++;
-    } else if (string2 === "consonantes" && consonantes.includes(char)) {
+  for (const char of string.toLowerCase()) {
+    if (conjunto.includes(char)) {
       contador++;
     }
   }
   return contador;
 };
 
-console.log(desglosarString("murcielagos", "vocales")); // 5
-console.log(desglosarString("murcielagos", "consonantes")); // 6
-
-/* 
-Punto #2. twoSum
-
-Desarrolle una funcion llamada twoSum que reciba una lista de numero enteros y otro numero entero y retorne los indices de los numeros del arreglo que sumados sean el otro numero.
-
-*/
-
-let twoSum = function (numeros, numero) {
+export const twoSum = (
+  numeros: number[],
+  numero: number
+): number[] | undefined => {
   if (numeros.length < 2 || numero == null) {
-    return null;
+    return undefined;
   }
   for (let i = 0; i < numeros.length; i++) {
     for (let j = i + 1; j < numeros.length; j++) {
@@ -44,24 +26,14 @@ let twoSum = function (numeros, numero) {
       }
     }
   }
-  return null;
+  return undefined;
 };
 
-console.log(twoSum([2, 7, 11, 15], 9)); // [0, 1]
-console.log(twoSum([3, 4, 2], 6)); // [1, 2]
-
-/* 
-Punto #3. conversionRomana
-
-Desarrolle una funcion llamada conversionRomana que reciba una string de cifras romanas y retorne el equivalente en cifras arábigas.
-
-*/
-
-let conversionRomana = function (romano) {
-  if (typeof romano !== "string" || romano.length === 0) {
-    return null;
+export const conversionRomana = (romano: string): number | undefined => {
+  if (romano.length === 0) {
+    return undefined;
   }
-  const valores = {
+  const valores: { [key: string]: number } = {
     I: 1,
     V: 5,
     X: 10,
@@ -85,19 +57,7 @@ let conversionRomana = function (romano) {
   return total;
 };
 
-console.log(conversionRomana("III")); // 3
-console.log(conversionRomana("XIV")); // 14
-console.log(conversionRomana("MMXXIV")); // 2024
-console.log(conversionRomana("MCMXCVII")); // 1997
-
-/* 
-Punto #4. descomposicion
-
-Desarrolle una funcion llamada descomposicion que reciba una string de palabras separada por comas, donde la primera palabra es la palabra a descomponer y el resto son el diccionario a utilizar. La función debe retornar las dos palabras del diccionario que compongan la palabra a descomponer.
-
-*/
-
-let descomposicion = function (string) {
+export const descomposicion = (string: string): string[] | undefined => {
   let partes = string.split(",");
   let palabra = partes[0];
   let diccionario = partes.slice(1);
@@ -110,7 +70,5 @@ let descomposicion = function (string) {
       }
     }
   }
-  return null;
+  return undefined;
 };
-
-console.log(descomposicion("malhumor,al,hum,humor,m,mal,malhu")); // ["mal", "humor"]
