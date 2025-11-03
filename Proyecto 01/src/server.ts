@@ -1,6 +1,5 @@
-import { Request, Response } from "express";
+import express, { Request, Response } from "express";
 import cors from "cors";
-import express from "express";
 import taller01Routes from "./routes/taller-01.routes";
 import taller02Routes from "./routes/taller-02.routes";
 import taller03Routes from "./routes/taller-03.routes";
