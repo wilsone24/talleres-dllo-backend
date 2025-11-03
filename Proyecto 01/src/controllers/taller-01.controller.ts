@@ -1,25 +1,25 @@
-export const convertidorTemp = (temperatura_grados: number): number => {
-  return temperatura_grados * (9 / 5) + 32;
-};
+export const convertidorTemp = (temperatura_grados: number): number =>
+  temperatura_grados * (9 / 5) + 32;
 
 export const resolvedor = (
   a: number,
   b: number,
   c: number,
   signo: "+" | "-"
-): number => {
+): number | undefined => {
   let numerador_izquierda = -b;
-  let numerador_derecha = (b ** 2 - 4 * a * c) ** (1 / 2);
+  let discriminante = b ** 2 - 4 * a * c;
+  let numerador_derecha = discriminante ** (1 / 2);
   let denominador = 2 * a;
+
+  if (discriminante < 0) return undefined;
 
   return signo === "+"
     ? (numerador_izquierda + numerador_derecha) / denominador
     : (numerador_izquierda - numerador_derecha) / denominador;
 };
 
-export const mejorParidad = (numero: number): boolean => {
-  return numero % 2 === 0;
-};
+export const mejorParidad = (numero: number): boolean => numero % 2 === 0;
 
 export const peorParidad = (
   numero: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
