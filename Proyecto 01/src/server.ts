@@ -2,6 +2,8 @@ import { Request, Response } from "express";
 import cors from "cors";
 import express from "express";
 import taller01Routes from "./routes/taller-01.routes";
+import taller02Routes from "./routes/taller-02.routes";
+import taller03Routes from "./routes/taller-03.routes";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -11,6 +13,8 @@ const SERVER_VERSION = process.env.SERVER_VERSION;
 app.use(cors());
 app.use(express.json());
 app.use(SERVER_VERSION + "taller-01", taller01Routes);
+app.use(SERVER_VERSION + "taller-02", taller02Routes);
+app.use(SERVER_VERSION + "taller-03", taller03Routes);
 
 function routeNotFound(request: Request, response: Response) {
   response.status(404).json({
