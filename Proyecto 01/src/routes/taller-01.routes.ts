@@ -15,9 +15,9 @@ const postConvertidorTemp = (request: Request, response: Response) => {
   response.status(200).json({ resultado });
 };
 
-const postResolvedor = () => {};
-const postMejorParidad = () => {};
-const postPeorParidad = () => {};
+const postResolvedor = (request: Request, response: Response) => {};
+const postMejorParidad = (request: Request, response: Response) => {};
+const postPeorParidad = (request: Request, response: Response) => {};
 
 taller01Routes.post("/convertidorTemp", postConvertidorTemp);
 taller01Routes.post("/convertidorTemp", postResolvedor);
