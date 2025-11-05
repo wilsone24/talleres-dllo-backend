@@ -1,7 +1,5 @@
 export const findMax = (numeros: number[]): number | undefined => {
-  if (numeros.length === 0) {
-    return undefined;
-  }
+  if (numeros.length === 0) return undefined;
   let max = numeros[0];
   for (const num of numeros) if (num > max) max = num;
   return max;
